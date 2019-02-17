@@ -1,0 +1,22 @@
+make sure ML day 1 - multiple regression fits the proj 3 requirements
+
+Requirements:
+1. Do what your heart commands/Find a Problem worth Solving, Analyzing, or Visualizing
+--Our hearts command us to predict sports outcomes
+
+2. Use ML in the context of technologies learned
+--We are using multilinear regression, based on somethign we've already learned.
+
+3. You must use Sci-Kit Learn and/or another machine learning library
+--We are using sklearn
+
+4.You must use at least 2 of the below...
+--We are using 1.)Python Pandas and 2.)MySQL Database
+
+5. Prepare 15 minute "data deep dive" or "infrastructure walkthrough" that shows machine learning in the context of what we've already learnerd
+
+6. Example projects...
+--our project is most similar to the 5th listed example project "Create an analysis of existing data to make a prediction, classification, or retgresion"
+
+7. The key is to show the value of what you know.
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>NFL Predictions</title>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+<style>
+
+    .node rect {
+        cursor: pointer;
+        shape-rendering: crispEdges;
+    }
+
+    .node text {
+        pointer-events: none;
+        shape-rendering: crispEdges;
+    }
+
+    body {
+        font-family: 'Roboto';
+        font-weight: 200;
+        font-size: 12px;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="game" style="z-index:100; position:absolute; top:800px; left:200px; width:210px; height:139px; background-image:url('assets/data_tip.png'); background-repeat:no-repeat;  opacity:0; pointer-events:none">
+     <div id="winner" style="position:absolute; top:30px; left:25px;">
+        <div id="game_winner_name" style="text-align:center;font-size:12px; margin-top:3px; font-family:Roboto; font-weight:normal">Patriots</div>
+        <img id="game_winner_img" src="assets/NE.png" style="margin:auto; display:block; height:32px;">
+        <div id="game_winner_prob" style="text-align:center; margin-left:5px; margin-top:-2px; font-size:24px; font-family:Roboto; font-weight:bold">62%</div>
+    </div>
+    <div id="loser" style="position:absolute; top:30px; right:25px;">
+        <div id="game_loser_name" style="text-align:center;font-size:12px; margin-top:3px; font-family:Roboto; font-weight:normal">Patriots</div>
+        <img id="game_loser_img" src="assets/NE.png" style="margin:auto; display:block; height:32px;">
+        <div id="game_loser_prob" style="text-align:center; margin-left:5px; margin-top:-2px; font-size:24px; font-family:Roboto; font-weight:bold">62%</div>
+    </div>
+</div>
+
+<div style=" z-index:100"></div>
+
+<p id="chart">
+
+    <script src="scripts/d3.min_04_30_15.js"></script>
+    <script src="scripts/nfl_predictions.min.js"></script>
+
+
+</body>
+</html>

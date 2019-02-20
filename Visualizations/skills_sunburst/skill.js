@@ -1,6 +1,7 @@
 function initchart() {
     var data = {
-        _proficiency: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        // _proficiency: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        _proficiency: [0, 0],
         children: null,
         value: 0,
         key: "",
@@ -74,7 +75,7 @@ function i(a) {
         .attr("dy", "0.35em")
         .attr("text-anchor", "middle")
         .attr("class", "breadcumb-text")
-        .style("fill", function (a) { return getcolor(d3.rgb(a._color)) < 150 ? "#fff" : "#000" })
+        .style("fill", function (a) { return getcolor(d3.rgb(a._color)) < 150 ? "#fff" : "#767676" })
         .text(function (a) { return a.key }),
     c
         .attr("transform", function (a, b) { return "translate(" + b * (r.w + r.s) + ", 0)" }), 
@@ -111,7 +112,7 @@ var chart = function (d3) {
     function c(b, c) {
         j.domain(d3.extent(b, function (a) { return a.date }));
         k
-            .domain([0, 100]), cpath
+            .domain([0, 1.25]), cpath
             .append("g")
             .attr("class", "x-axis axis")
             .attr("transform", "translate(0," + h + ")")
@@ -129,7 +130,7 @@ var chart = function (d3) {
             .attr("y", 6)
             .attr("dy", ".91em")
             .style("text-anchor", "end")
-            .text("Proficiency"), cpath
+            .text("Coefficient Weight"), cpath
             .append("path")
             .datum(b)
             .attr("class", "line")
@@ -163,7 +164,7 @@ var chart = function (d3) {
             .svg
             .axis()
             .scale(j)
-            .tickValues([1999, 2004, 2009, 2013])
+            .tickValues([2017, 2018])
             .tickFormat(d3.format(".0f"))
             .tickPadding(10)
             .tickSize(0)
@@ -174,7 +175,7 @@ var chart = function (d3) {
             .scale(k)
             .tickSize(0)
             .tickPadding(10)
-            .tickValues([20, 40, 60, 80, 100])
+            .tickValues([.20, .40, .60, .80, 1.00, 1.20])
             .orient("left"),
         n = d3.svg.line().interpolate("basis").x(function (a) {
             return j(a.date)

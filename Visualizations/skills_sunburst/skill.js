@@ -94,7 +94,8 @@ function k(a) {
     }
     if (a.depth > 1) {
         var f = d[a.value % 3];
-        return d3.rgb(a.parent._color).brighter(.2 * a.depth + f * a.depth)
+        //return d3.rgb(a.parent._color).brighter(.2 * a.depth + f * a.depth)
+        return d3.rgb(a.parent._color).brighter()
     }
 }
 var l;
@@ -121,7 +122,7 @@ var chart = function (d3) {
             .attr("x", 450)
             .attr("y", -8)
             .style("text-anchor", "end")
-            .text("Time"), cpath
+            .text("Coefficient Weight"), cpath
             .append("g")
             .attr("class", "y-axis axis")
             .call(lefttick)

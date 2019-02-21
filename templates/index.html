@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What team will win</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/style.css"> -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.min.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">What Team will Win?</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="not-active"><a href="/home"><img alt="NBA" src="../static/icons/home.png"> Home</a></li>
+          <li class="not-active"><a href="/model"><img alt="NBA" src="../static/icons/model.png"> Model</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div id="teams-table">
+      <div class="row">
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Atlanta_Hawks.gif" alt="Atlanta_Hawks" href="Atlanta_Hawks"></div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Boston_Celtics.gif" alt="Boston_Celtics" href="Boston_Celtics">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Bucks.gif" alt="Bucks" href="Bucks">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/76ers.gif" alt="76ers" href="76ers">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Bulls.gif" alt="Bulls" href="Bulls">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Cavs.gif" alt="Cavs" href="Cavs">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Clippers.gif" alt="Clippers" href="Clippers">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Grizzlies.gif" alt="Grizzlies" href="Grizzlies">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Heat.gif" alt="Heat" href="Heat">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Hornets.gif" alt="Hornets" href="Hornets">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Jazz.gif" alt="Jazz" href="Jazz">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Kings.gif" alt="Kings" href="Kings">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Knicks.gif" alt="Knicks" href="Knicks">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Lakers.gif" alt="Lakers" href="Lakers">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Magic.gif" alt="Magic" href="Magic">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Mavs.gif" alt="Mavs" href="Mavs">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Nets.gif" alt="Nets" href="Nets">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Nuggets.gif" alt="Nuggets" href="Nuggets">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Pacers.gif" alt="Pacers" href="Pacers">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Pelicans.gif" alt="Pelicans" href="Pelicans">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Pistons.gif" alt="Pistons" href="Pistons">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Raptors.gif" alt="Raptors" href="Raptors">
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <img class="thumbnail" src="../static/icons/Rockets.gif" alt="Rockets" href="Rockets">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Spurs.gif" alt="Spurs" href="Spurs">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Suns.gif" alt="Suns" href="Suns">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Thunder.gif" alt="Thunder" href="Thunder">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Timber.gif" alt="Timber" href="Timber">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Trail_Blazer.gif" alt="Trail_Blazer" href="Trail_Blazer">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Warriors.gif" alt="Warriors" href="Warriors">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img class="thumbnail" src="../static/icons/Wizards.gif" alt="Wizards" href="Wizards">
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<!-- <script src="static/app.js"></script> -->
+<!-- <script src="static/app_b.js"></script> -->
+
+</html> -->

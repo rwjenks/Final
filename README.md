@@ -1,4 +1,4 @@
 # Final
 
-The goal of this project is to predict NBA game outcomes using a multiple linear regression machine learning model. Using game statistics from previous seasons, our model works to identify the most influencial factors, i.e. 3 pointers, free throws, etc., and determine how important each of these factors had been in determining the outcomes of games. The differences of these attributes are then aggregated for each matchup and a classification of win/lose is predicted, along with a point spread. 
+The goal of this project is to predict NBA game outcomes using a multiple linear regression machine learning model. Using game statistics from previous seasons, our model works to identify which performance dimensions are the most influencial factors, e.g. 3 pointers, free throws, etc... Once the model understands the relative importance of each variable during past games, it can predict the outcomes of future games via aggregation of metrics for each matchup, producing a classification of "win" or "lose" with an accompanying point-spread. 
 

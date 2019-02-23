@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  	<head>
+    	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    	<title>Neural Network Perfomance</title>
+		
+		<style>
+		
+			body
+			{
+			  	font: 10px arial;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+		<script type="text/javascript" src="js/gauge.js"></script>
+		<!-- <script type="text/javascript" src="js/gears.js"></script> -->
+
+		<script>
+						
+				
+			var gauges = [];
+			
+			function createGauge(name, label, min, max)
+			{
+				var config = 
+				{
+					size: 200,
+					label: label,
+					min: undefined != min ? min : 0.0,
+					max: undefined != max ? max : 100.0,
+					minorTicks: 5 
+				}
+				
+				var range = config.max - config.min;
+				config.yellowZones = [{ from: config.min + range*0.75, to: config.min + range*0.9 }];
+				config.redZones = [{ from: config.min + range*0.9, to: config.max }];
+				
+				gauges[name] = new Gauge(name + "GaugeContainer", config);
+				gauges[name].render();
+			}
+			
+			function createGauges()
+			{
+				createGauge("mse", "MSE", 0, 30);
+				createGauge("r2", "R-Squared", 0.0, 1.0);
+				createGauge("accuracy", "Accuracy %", 0, 100);
+				//createGauge("test", "Test", -50, 50 );
+			}
+			
+			
+
+			function updateGauges() {
+				var mseValue = (gauges.mse.config.min + 18.276542189630565)
+				gauges.mse.redraw(mseValue);
+
+				var r2Value = (gauges.r2.config.min + 0.9029880431438948)
+				gauges.r2.redraw(r2Value)
+
+				var accValue = (gauges.accuracy.config.min + 76.58536587304217)
+				gauges.accuracy.redraw(accValue)
+			}
+		
+
+			function initialize()
+			{
+				createGauges();
+				setInterval(updateGauges, 5000, 10);
+			}
+			
+		</script>
+		
+		
+	</head>
+	
+	<body onload="initialize()">
+		<span id="mseGaugeContainer"></span>
+		<span id="r2GaugeContainer"></span>
+		<span id="accuracyGaugeContainer"></span>
+		<!-- <span id="testGaugeContainer"></span> -->
+		
+	
+	</body>
+	
+</html>

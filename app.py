@@ -18,7 +18,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:007326@localhost:3306/bball_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Grateful11!!@localhost:3306/bball_db"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>NDS Predictions</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="../FINAL.css">
+
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class=" navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" class = "hoverthing" href="../html.html">NDS Predictions</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" class = "hoverthing" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Model<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a class = "hoverthing" href="temp.html">Efficiency of the Model</a></li>
+                     <li><a class = "hoverthing" href="humidity.html">Performance Dimensions</a></li>
+                     <li><a class = "hoverthing" href="cloudiness.html"></a></li>
+                     <li><a class = "hoverthing" href="windspeed.html">Wind Speed</a></li>
+                  </ul>
+               </li>
+               <li><a class= "hoverthing" href="../aboutus.html">About Us</a></li>
+               <li><a class = "hoverthing" href="index.html">Our Model</a></li>
+               <li><a class = "hoverthing" href="../bestvsworst.html">Worst Ranked Team vs. Best Ranked Team</a></li>
+            </ul>
+            </li>
+            </ul>
+         </div>
+         </div>
+      </header>
+      <main>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  	<head>
+    	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    	<title>Neural Network Perfomance</title>
+		
+		<style>
+		
+			body
+			{
+			  	font: 10px arial;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+		<script type="text/javascript" src="js/gauge.js"></script>
+		<!-- <script type="text/javascript" src="js/gears.js"></script> -->
+
+		<script>
+						
+				
+			var gauges = [];
+			
+			function createGauge(name, label, min, max)
+			{
+				var config = 
+				{
+					size: 200,
+					label: label,
+					min: undefined != min ? min : 0.0,
+					max: undefined != max ? max : 100.0,
+					minorTicks: 5 
+				}
+				
+				var range = config.max - config.min;
+				config.yellowZones = [{ from: config.min + range*0.75, to: config.min + range*0.9 }];
+				config.redZones = [{ from: config.min + range*0.9, to: config.max }];
+				
+				gauges[name] = new Gauge(name + "GaugeContainer", config);
+				gauges[name].render();
+			}
+			
+			function createGauges()
+			{
+				createGauge("mse", "MSE", 0, 30);
+				createGauge("r2", "R-Squared", 0.0, 1.0);
+				createGauge("accuracy", "Accuracy %", 0, 100);
+				//createGauge("test", "Test", -50, 50 );
+			}
+			
+			
+
+			function updateGauges() {
+				var mseValue = (gauges.mse.config.min + 18.276542189630565)
+				gauges.mse.redraw(mseValue);
+
+				var r2Value = (gauges.r2.config.min + 0.9029880431438948)
+				gauges.r2.redraw(r2Value)
+
+				var accValue = (gauges.accuracy.config.min + 74.66666666666667)
+				gauges.accuracy.redraw(accValue)
+			}
+		
+
+			function initialize()
+			{
+				createGauges();
+				setInterval(updateGauges, 5000, 10);
+			}
+			
+		</script>
+		
+		
+	</head>
+	
+<center><body onload="initialize()">
+		<span id="mseGaugeContainer"></span>
+		<span id="r2GaugeContainer"></span>
+		<span id="accuracyGaugeContainer"></span>
+		<!-- <span id="testGaugeContainer"></span> --></center>	
+
+
+		<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Skills sunburst</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="skill.css"/> -->
+  </head>
+  <body>
+<style>
+	body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #fff;
+    width: 1000px;
+    height: 700px;
+    margin-top: 10px;
+  }
+	</style>	  
+    <div id="skills">
+      <div id="skillmap">
+        <div class="skills-wrapper">
+          <div class="skills-sunburst"></div>
+          <div class="skills-chart">
+            <div id="skills-chart-breadcrumb"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="skillsdata.js"></script>
+    <script type="text/javascript" src="skill.js"></script>
+    <script type="text/javascript">
+      // Hack to make this example display correctly in an iframe on bl.ocks.org
+      d3.select(self.frameElement).style("height", "700px");
+  </script> 
+  </body>
+</html>
+		
+	
+	</body>
+	
+</html>

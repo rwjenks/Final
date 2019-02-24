@@ -1,0 +1,192 @@
+body {
+    padding: 5px;
+    padding-bottom: 5px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #333;
+    background: #fafaf9;
+}
+
+main {
+    font-size: 18px;
+}
+
+h1 {
+    color: red;
+    font-size: 25px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    
+}
+
+h2 {
+    color: rgba(28, 28, 139, 0.801);
+    font-size: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+h4 {
+    color: rgb(66, 88, 100);
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+
+h5 {
+    color: rgb(66, 88, 100);
+    font-size: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a img {
+    width: 160px;
+    height: 130px;
+}
+
+section {
+    padding: 15px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.navbar-default .navbar-brand {
+    color: rgb(250, 250, 253);
+    background-color: rgb(241, 9, 9);
+
+}
+
+.summary-img {
+    float: left;
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.box {
+    padding: 2px;
+    background-color: white;
+}
+
+.selected {
+    padding: 5px;
+    border: 3px solid blue;
+}
+
+.viz-img {
+    width: 600px;
+    height: 400px;
+    margin-right: 20px;
+}
+
+/* .bg-dark { */
+    /* background-color: #e7e7e7; */
+    /* @include media-breakpoint-up(sm) { */
+        /* background-color: rgb(58, 118, 141); */
+    /* } */
+/* } */
+ @media (max-width: 767px) {
+    .navbar {
+        background-color: rgb(58,118,141);
+    }
+    .navbar-default .navbar-nav li a {
+        color: rgb(255, 255, 255);
+    }
+    .navbar-default .navbar-nav .dropdown-menu li a {
+        color: black;
+    }
+}
+
+
+.carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+
+  .hoverthing:hover { 
+    color: rgb(4, 0, 255) !important;
+  }
+
+  .container{
+    flex-wrap: wrap !important;
+  }
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+}
+
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .card-columns {
+        @include media-breakpoint-only(lg) {
+          column-count: 4;
+        }
+        @include media-breakpoint-only(xl) {
+          column-count: 5;
+        }
+      }
+
+
+
+
+    body {
+
+      }
+      #skillmap .skills-wrapper {
+        margin-top: 10px;
+        overflow: auto;
+      }
+      #skillmap .skills-sunburst {
+        float: left;
+        width: 500px;
+        margin-left: -80px;
+      }
+      #skillmap .skills-sunburst svg {
+        font: 11px 'Source Sans Pro', sans-serif;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      #skillmap .skills-chart {
+        float: right;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 15px;
+        margin: 80px 20px 0 0;
+      }
+      #skillmap .skills-chart .breadcumb-text {
+        font-size: 13px;
+        font-weight: 700;
+      }
+      #skillmap .skills-chart #skills-chart-line {
+        fill: none;
+        stroke-width: 3.5px;
+      }
+      #skillmap .skills-chart .axis path,
+      #skillmap .skills-chart .axis line {
+        fill: none;
+      }
+      #skillmap .skills-chart .x-axis path,
+      #skillmap .skills-chart .y-axis path {
+        stroke: #444;
+        stroke-width: 1px;
+        shape-rendering: geometricPrecision;
+      }

@@ -30,20 +30,21 @@ engine = db.engine
 
 
 
-# @app.route("/")
-# def index():
-#     """Return the homepage."""
-#     return render_template("index.html")
+@app.route("/")
+def index():
+    """Return the homepage."""
+    
+    return render_template("index_3.html")
 
 @app.route("/model")
-def index():
+def model():
     """Model_page."""
-    return render_template("templates/index.html")
+    return render_template("index.html")
 
-@app.route("/model/data")
-def names():
+@app.route("/model_1314")
+def model_1314():
     """Return a all database data"""
-    df = pd.read_sql('Select * from bball_db', engine)
+    df = pd.read_sql('Select * from model_1314', engine)
     # Use Pandas to perform the sql query
    
     # df = pd.read_sql_query(stmt, db.session.bind)
@@ -51,6 +52,49 @@ def names():
     # Return a list of the column names (sample names)
     return df.to_json(orient='records')
 
+@app.route("/model/model_1415")
+def model_1415():
+    """Return a all database data"""
+    df = pd.read_sql('Select * from model_1415', engine)
+    # Use Pandas to perform the sql query
+   
+    # df = pd.read_sql_query(stmt, db.session.bind)
+
+    # Return a list of the column names (sample names)
+    return df.to_json(orient='records')
+
+@app.route("/model/model_1516")
+def model_1516():
+    """Return a all database data"""
+    df = pd.read_sql('Select * from model_1516', engine)
+    # Use Pandas to perform the sql query
+   
+    # df = pd.read_sql_query(stmt, db.session.bind)
+
+    # Return a list of the column names (sample names)
+    return df.to_json(orient='records')
+
+@app.route("/model_1617")
+def model_1617():
+    """Return a all database data"""
+    df = pd.read_sql('Select * from bball', engine)
+    # Use Pandas to perform the sql query
+   
+    # df = pd.read_sql_query(stmt, db.session.bind)
+
+    # Return a list of the column names (sample names)
+    return df.to_json(orient='records')@app.route("/model/data")
+
+@app.route("/model_1718")
+def model_1718():
+    """Return a all database data"""
+    df = pd.read_sql('Select * from model_1718', engine)
+    # Use Pandas to perform the sql query
+   
+    # df = pd.read_sql_query(stmt, db.session.bind)
+
+    # Return a list of the column names (sample names)
+    return df.to_json(orient='records')
 
 if __name__ == "__main__":
     app.run(debug=True)

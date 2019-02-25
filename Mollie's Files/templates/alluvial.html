@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>NDS Predictions</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="FINAL.css">
+
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class=" navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" class = "hoverthing" href="/">NDS Predictions</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+               </li>
+               <li><a class= "hoverthing" href="/aboutus">About Us</a></li>
+               <li><a class = "hoverthing" href="/model"">Our Model</a></li>
+               <li><a class = "hoverthing" href="/alluvial">Predictions</a></li>
+               <li><a class = "hoverthing" href="/bestvsworst">Worst Ranked Team vs. Best Ranked Team</a></li>
+            </ul></ul>
+            </li>
+            </ul>
+         </div>
+         </div>
+      </header>
+      <main>
+
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>NBA Predictions</title>
+<head>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'> -->
+
+<style>
+
+    .node rect {
+        cursor: pointer;
+        shape-rendering: crispEdges;
+    }
+
+    .node text {
+        pointer-events: none;
+        shape-rendering: crispEdges;
+    }
+
+    /* body {
+        font-family: 'Open Sans';
+        font-weight: 200;
+        font-size: 12px;
+    } */
+
+</style>
+</head>
+<body>
+
+<div id="game" style="z-index:100; position:absolute; top:800px; left:200px; width:210px; height:139px; background-image:url('data_tip.png'); background-repeat:no-repeat;  opacity:0; pointer-events:none">
+     <div id="winner" style="position:absolute; top:30px; left:25px;">
+        <div id="game_winner_name" style="text-align:center;font-size:11px; margin-top:3px; font-family:Roboto; font-weight:normal">TeamA</div>
+        <img id="game_winner_img" style="margin:auto; display:block; height:32px;">
+        <div id="game_winner_prob" style="text-align:center; margin-left:5px; margin-top:-2px; font-size:22px; font-family:Roboto; font-weight:bold">Winner</div>
+    </div>
+    <div id="loser" style="position:absolute; top:30px; right:25px;">
+        <div id="game_loser_name" style="text-align:center;font-size:11px; margin-top:3px; font-family:Roboto; font-weight:normal">TeamB</div>
+        <img id="game_loser_img" style="margin:auto; display:block; height:32px;">
+        <div id="game_loser_prob" style="text-align:center; margin-left:5px; margin-top:-2px; font-size:22px; font-family:Roboto; font-weight:bold">Loser</div>
+    </div>
+    <div id="spread" style="position:absolute; top:100px; right:25px">
+        <div id="point_spread" style="text-align:center;font-size:10px; margin-top:3px; font-family:Roboto; font-weight:bold">test</div>
+    </div>
+</div>
+
+
+
+<div style=" z-index:100"></div>
+
+<p id="chart">
+
+    <script src="d3.min_04_30_15.js"></script>
+    <script src="alluvial.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
